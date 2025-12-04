@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Alterar Produto</title>
+</head>
+<body>
+  <h1>Alterar Produto #{{ reg[0] }}</h1>
+  <form method="post" action="{{ url_for('alterar', idproduto=reg[0]) }}">
+    <label>Descrição:<br><input type="text" name="descricao" required value="{{ reg[1] }}"></label><br>
+    <label>Preço compra:<br><input type="number" step="0.01" name="precocompra" required value="{{ reg[2] }}"></label><br>
+    <label>Preço venda:<br><input type="number" step="0.01" name="precovenda" required value="{{ reg[3] }}"></label><br>
+    <button type="submit">Salvar</button>
+  </form>
+  <p><a href="{{ url_for('listar') }}">Voltar à lista</a></p>
+</body>
+</html>
